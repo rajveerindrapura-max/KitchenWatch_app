@@ -17,9 +17,13 @@ class OwnerShell extends StatelessWidget {
           color: AppColors.surface,
           border: Border(top: BorderSide(color: AppColors.border, width: 1.0)),
         ),
-        child: Center(
-          child: ConstrainedBox(
-            constraints: const BoxConstraints(maxWidth: 720),
+        child: SafeArea(
+          top: false,
+          child: SizedBox(
+            height: 80,
+            child: Center(
+              child: ConstrainedBox(
+                constraints: const BoxConstraints(maxWidth: 720),
             child: NavigationBar(
               selectedIndex: navigationShell.currentIndex,
               backgroundColor: AppColors.surface,
@@ -63,6 +67,8 @@ class OwnerShell extends StatelessWidget {
           ),
         ),
       ),
-    );
+    ),
+  ),
+);
   }
 }
